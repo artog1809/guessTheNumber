@@ -42,7 +42,7 @@ const messages = {
 
 // Получить последние данные по лучшему игроку из localstorage
 let best = JSON.parse(localStorage.getItem("champion"))
-if(best.name == ""){
+if(best == null){
     localStorage.setItem("champion", JSON.stringify({name:"champ", result:"2"}))
 }
 bestName.textContent = best.name + ":";
