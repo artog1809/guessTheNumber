@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Угадай число</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <button class="back__button">Вернуться</button>
+            <div class="header__content">
+                <div class="header__title">
+                    Игра: Угадай число
+                </div>
+                <div class="header__subtitle">
+                    Попробуйте отгадать число задуманное компьютером
+                </div>
+            </div>
+        </div>
+
+        <div class="page__game">
+            <div class="scale">
+                <div class="scale__title">Введите диапазон значений:</div>
+                <div class="scale__forms">
+                    <div class="scale__input">
+                        <label class="scale__label">От:</label>
+                        <input class="scale__input__start" type="number"></input>
+                    </div>
+                    <div class="scale__input">
+                        <label class="scale__label">До:</label>
+                        <input class="scale__input__end" type="number"></input>
+                    </div>
+                </div>
+                <button class="scale__button">Сохранить</button>
+            </div>
+
+            <div class="main">
+                <label class="form__label">Введите число:</label>
+                <input class="form__input" type="number">
+                <button class="form__button">Играть</button>
+            </div>
+
+            <div class="result">
+                <div class="result__info">
+                    <div class="result__check">
+                        <span class="result__check__label">Результат: </span>
+                        <span class="result__check__output"></span>
+                    </div>
+                    <div class="result__help">
+                        <span class="result__help__label">Подсказка: </span>
+                        <span class="result__help__output"></span>
+                    </div>
+                    <div class="result__attempt">
+                        <span class="result__attempt__label">Предыдущая попытка: </span>
+                        <span class="result__attempt__output"></span>
+                    </div>
+                    <div class="result__try">
+                        <span class="result__try__label">Осталось попыток: </span>
+                        <span class="result__try__output"></span>
+                    </div>
+                    <div class="result__guessed">
+                        <span class="result__guessed__label">Отгадано подряд: </span>
+                        <span class="result__guessed__output"></span>
+                    </div>
+                </div>
+                <div class="new-game">
+                    <button class="new-game__button">Начать заново</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="page__auth">
+            <div class="auth">
+                <label class="auth__label">
+                    Введите имя
+                </label>
+                <input class="auth__input" type="text">
+
+                <button class="auth__button">
+                    Начать игру
+                </button>
+
+            </div>
+            <div class="best__player">
+                <div class="best__title">
+                    Лучший игрок
+                </div>
+                <div class="best__info">
+                    <span class="best__player__name"></span>
+                    <span class="best__player__score"></span>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="/script.js"></script>
+
+
+</body>
+
+</html>
