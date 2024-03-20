@@ -1,20 +1,27 @@
-const input = document.querySelector(".form__input");
-const play = document.querySelector(".form__button");
-const check = document.querySelector(".result__check__output");
-const help = document.querySelector(".result__help__output");
-const refresh = document.querySelector(".new-game__button");
-const last = document.querySelector(".result__attempt__output");
-const scaleStart = document.querySelector(".scale__input__start");
-const scaleEnd = document.querySelector(".scale__input__end");
-const save = document.querySelector(".scale__button");
-const attempts = document.querySelector(".result__try__output");
+// Блоки 
 const backgroundElement = document.querySelector(".container");
-const authName = document.querySelector(".auth__input");
-const newGame = document.querySelector(".auth__button");
-const back = document.querySelector(".back__button");
 const pageGame = document.querySelector(".page__game");
 const pageAuth = document.querySelector(".page__auth");
 const header = document.querySelector(".header");
+
+// Кнопки
+const save = document.querySelector(".scale__button");
+const play = document.querySelector(".form__button");
+const refresh = document.querySelector(".new-game__button");
+const newGame = document.querySelector(".auth__button");
+const back = document.querySelector(".back__button");
+
+// Инпуты
+const input = document.querySelector(".form__input");
+const scaleStart = document.querySelector(".scale__input__start");
+const scaleEnd = document.querySelector(".scale__input__end");
+const authName = document.querySelector(".auth__input");
+
+//Вывод 
+const check = document.querySelector(".result__check__output");
+const help = document.querySelector(".result__help__output");
+const last = document.querySelector(".result__attempt__output");
+const attempts = document.querySelector(".result__try__output");
 const guessed = document.querySelector(".result__guessed__output");
 const bestName = document.querySelector(".best__player__name");
 const bestScore = document.querySelector(".best__player__score");
