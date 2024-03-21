@@ -26,6 +26,7 @@ const guessed = document.querySelector(".result__guessed__output");
 const bestName = document.querySelector(".best__player__name");
 const bestScore = document.querySelector(".best__player__score");
 
+// Глобальные переменные
 let usrName; // Введенное имя пользователя
 let usrNum; // Число введенное пользователем
 let min; // Нижняя граница диапазона
@@ -33,8 +34,6 @@ let max; // Верхняя граница диапазона
 let rand; // Случайно сгенерированное число
 let atts; // Количество осташихся попыток
 let guess = 0; // Количество отгаданых подряд
-
-guessed.textContent = guess;
 
 // Список сообщений пользователю
 const messages = { 
@@ -55,6 +54,8 @@ if(best == null){
 bestName.textContent = best.name + ":";
 bestScore.textContent = best.result + " подряд";
 
+guessed.textContent = guess;
+
 refresh.addEventListener('click', refreshClickFunction) // Добавить обработчик клика на кнопку "Начать заново"
 play.addEventListener('click', playClickFunction); // Добавить обработчик клика на кнопку "Играть"
 save.addEventListener('click', saveClickFunction); // Добавить обработчик клика на кнопку "Сохранить диапазон"
@@ -66,15 +67,15 @@ play.disabled = true;
 
 // Обработчик клика на "Играть"
 function playClickFunction() { 
+    atts--;
     attempts.textContent = atts;
+    // debugger
     if(atts > 0){ //Проверка на количество оставшихся попыток
-        atts--;
         [check.textContent, help.textContent] = checkResult()
-        attempts.textContent = atts;
+        console.log(atts)
     } else { // Завершить игру, если потрачены все попытки
         guess = 0;
         guessed.textContent = guess; 
-        attempts.textContent = atts;
         endGame()
         check.textContent = messages.lost;
         help.textContent = messages.lost;
@@ -98,6 +99,7 @@ function saveClickFunction() {
     min = Number(scaleStart.value) //Получить из формы нижнюю границу диапазона
     max = Number(scaleEnd.value) //Получить из формы верхнюю границу диапазона
     atts = getNumOfAttempts(max-min+1);
+    attempts.textContent = atts;
     if( min >= max) { // Проверка на корректность диапазона
         check.textContent = messages.scale; 
         help.textContent = messages.scale;
@@ -105,6 +107,7 @@ function saveClickFunction() {
     } else {
         attempts.textContent = atts;
         rand = getRandomInRange(min, max)
+        console.log(rand)
         input.disabled = false;
         play.disabled = false;
         messages.error = `Введите число в диапазоне от ${min} до ${max}`; // Добавить еще 1 сообщение пользователю в список
